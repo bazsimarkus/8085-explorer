@@ -6587,7 +6587,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "StockLib:Button TACT 12x12mm"
+		(symbol "StockLib:Button TACT 6x6mm"
 			(pin_names
 				(offset 1.016)
 			)
@@ -6603,7 +6603,7 @@
 					(justify left bottom)
 				)
 			)
-			(property "Value" "Button TACT 12x12mm"
+			(property "Value" "Button TACT 6x6mm"
 				(at -7.62 -8.382 0)
 				(effects
 					(font
@@ -6612,7 +6612,7 @@
 					(justify left top)
 				)
 			)
-			(property "Footprint" "StockLib:Button TACT 12x12mm"
+			(property "Footprint" "StockLib:Button TACT 6x6mm"
 				(at 0 0 0)
 				(effects
 					(font
@@ -6631,7 +6631,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "12 x 12 mm, 10 mm Actuator Height, 260 gf, Black, Long Crimped, Through Hole, SPST, Tactile Switch"
+			(property "Description" "6 x 6 mm, 10 mm Actuator Height, 260 gf, Black, Long Crimped, Through Hole, SPST, Tactile Switch"
 				(at 0 0 0)
 				(effects
 					(font
@@ -6751,7 +6751,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "Button TACT 12x12mm_0_0"
+			(symbol "Button TACT 6x6mm_0_0"
 				(rectangle
 					(start -7.62 -7.62)
 					(end 7.62 7.62)
@@ -21152,6 +21152,192 @@
 		)
 	)
 	(symbol
+		(lib_id "StockLib:Button TACT 6x6mm")
+		(at 177.8 151.13 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "80b19782-88c4-479e-9be3-d6e887f3d086")
+		(property "Reference" "S1"
+			(at 177.8 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Button TACT 6x6mm"
+			(at 177.8 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "StockLib:Button TACT 6x6mm"
+			(at 177.8 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 177.8 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "6 x 6 mm, 10 mm Actuator Height, 260 gf, Black, Long Crimped, Through Hole, SPST, Tactile Switch"
+			(at 177.8 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MF" "CUI Devices"
+			(at 177.8 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Package" "None"
+			(at 177.8 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Price" "None"
+			(at 177.8 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/TS02-66-100-BK-260-LCR-D/CUI+Devices/view-part/?ref=eda"
+			(at 177.8 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 177.8 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "1.0"
+			(at 177.8 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/TS02-66-100-BK-260-LCR-D/CUI+Devices/view-part/?ref=snap"
+			(at 177.8 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MP" "TS02-66-100-BK-260-LCR-D"
+			(at 177.8 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "CUI_purchase_URL" "https://www.cuidevices.com/product/switches/tactile-switches/ts02-66-100-bk-260-lcr-d?utm_source=snapeda.com&utm_medium=referral&utm_campaign=snapedaBOM"
+			(at 177.8 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 177.8 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "CUI Devices"
+			(at 177.8 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f3a1bc3d-2bd9-40e5-97a5-ae7567c8889a")
+		)
+		(pin "3"
+			(uuid "bc71f2b4-095c-447c-958d-82fc98ddf0c5")
+		)
+		(pin "1"
+			(uuid "252028d3-9e85-4f6c-9f67-a15bf5ca03c3")
+		)
+		(pin "4"
+			(uuid "3521eb18-a3bf-43c7-9fde-a30428fa2281")
+		)
+		(instances
+			(project ""
+				(path "/ddfadebd-517c-41ab-bf2b-16caab502112"
+					(reference "S1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "StockLib:C_100nF")
 		(at 60.96 205.74 0)
 		(unit 1)
@@ -22502,192 +22688,6 @@
 			(project "8085-explorer"
 				(path "/ddfadebd-517c-41ab-bf2b-16caab502112"
 					(reference "#PWR032")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "StockLib:Button TACT 12x12mm")
-		(at 177.8 151.13 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ed6e70d1-5d85-40ec-a386-a98767430c37")
-		(property "Reference" "S1"
-			(at 177.8 138.43 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Button TACT 12x12mm"
-			(at 177.8 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "StockLib:Button TACT 12x12mm"
-			(at 177.8 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 177.8 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "12 x 12 mm, 10 mm Actuator Height, 260 gf, Black, Long Crimped, Through Hole, SPST, Tactile Switch"
-			(at 177.8 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MF" "CUI Devices"
-			(at 177.8 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Package" "None"
-			(at 177.8 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Price" "None"
-			(at 177.8 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Check_prices" "https://www.snapeda.com/parts/TS02-66-100-BK-260-LCR-D/CUI+Devices/view-part/?ref=eda"
-			(at 177.8 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "STANDARD" "Manufacturer Recommendations"
-			(at 177.8 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "PARTREV" "1.0"
-			(at 177.8 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "SnapEDA_Link" "https://www.snapeda.com/parts/TS02-66-100-BK-260-LCR-D/CUI+Devices/view-part/?ref=snap"
-			(at 177.8 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MP" "TS02-66-100-BK-260-LCR-D"
-			(at 177.8 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "CUI_purchase_URL" "https://www.cuidevices.com/product/switches/tactile-switches/ts02-66-100-bk-260-lcr-d?utm_source=snapeda.com&utm_medium=referral&utm_campaign=snapedaBOM"
-			(at 177.8 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "Availability" "In Stock"
-			(at 177.8 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(property "MANUFACTURER" "CUI Devices"
-			(at 177.8 151.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1f987dbf-19e0-4c3a-a7e9-af5c5e7eecb7")
-		)
-		(pin "2"
-			(uuid "6233e478-9d3e-4e41-9d7d-691bc427f53a")
-		)
-		(pin "4"
-			(uuid "d51df118-30d7-4e19-b4a6-4bf410b7c10d")
-		)
-		(pin "3"
-			(uuid "ed6b176c-8bfd-49e6-9467-2c106c5959ac")
-		)
-		(instances
-			(project ""
-				(path "/ddfadebd-517c-41ab-bf2b-16caab502112"
-					(reference "S1")
 					(unit 1)
 				)
 			)
