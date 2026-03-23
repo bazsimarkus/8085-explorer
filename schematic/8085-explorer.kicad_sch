@@ -19063,22 +19063,24 @@
 		(fields_autoplaced yes)
 		(uuid "12f14a24-106e-4fdb-a3a0-e5391b8b805a")
 		(property "Reference" "R6"
-			(at 36.83 254 90)
+			(at 33.02 252.7299 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "470R"
-			(at 34.29 254 90)
+		(property "Value" "1k"
+			(at 33.02 255.2699 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "StockLib:R_470_Axial_DIN0207"
+		(property "Footprint" "StockLib:R_1k_Axial_DIN0207"
 			(at 28.702 254 90)
 			(effects
 				(font
@@ -20070,22 +20072,24 @@
 		(fields_autoplaced yes)
 		(uuid "489e81c7-cb12-4dd1-8566-70e355d19155")
 		(property "Reference" "R2"
-			(at 132.08 120.65 90)
+			(at 128.27 119.3799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "470R"
-			(at 129.54 120.65 90)
+		(property "Value" "1k"
+			(at 128.27 121.9199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "StockLib:R_470_Axial_DIN0207"
+		(property "Footprint" "StockLib:R_1k_Axial_DIN0207"
 			(at 123.952 120.65 90)
 			(effects
 				(font
@@ -24116,22 +24120,24 @@
 		(fields_autoplaced yes)
 		(uuid "f865ea28-ae54-4222-98f1-daf2245a0978")
 		(property "Reference" "R1"
-			(at 119.38 120.65 90)
+			(at 115.57 119.3799 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Value" "470R"
-			(at 116.84 120.65 90)
+		(property "Value" "1k"
+			(at 115.57 121.9199 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 			)
 		)
-		(property "Footprint" "StockLib:R_470_Axial_DIN0207"
+		(property "Footprint" "StockLib:R_1k_Axial_DIN0207"
 			(at 111.252 120.65 90)
 			(effects
 				(font
