@@ -22496,7 +22496,7 @@
 		)
 	)
 	(gr_text "R1OUT"
-		(at 101.092001 52.578 0)
+		(at 101.092001 53.594 0)
 		(layer "F.SilkS")
 		(uuid "3d0a260d-a667-4a8b-9534-4611ddd4e622")
 		(effects
