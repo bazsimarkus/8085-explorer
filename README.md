@@ -25,6 +25,7 @@ A Netronics Explorer/85 compatible Intel 8085 single board computer that runs th
   - [MicroPython Examples](#micropython-examples)
   - [Assembly Examples](#assembly-examples)
 - [Schematic](#schematic)
+  - [Bill of Materials](#bill-of-materials)
 - [How It Works](#how-it-works)
   - [Address Bus Demultiplexing](#address-bus-demultiplexing)
   - [Memory Map](#memory-map)
@@ -209,6 +210,98 @@ Then program the resulting binary onto a 28C256 EEPROM.
 ![8085 Explorer Schematic](/docs/images/8085-explorer-schematic.jpg)
 
 The full KiCad project files (schematic, PCB layout, and project file) are in the `schematic/` directory.
+
+### Bill of Materials
+
+The following table lists all components needed to build one complete 8085 Explorer board.
+
+#### PCB
+
+| Ref | Qty | Description |
+|-----|-----|-------------|
+| - | 1 | 8085 Explorer v1.0 PCB |
+
+#### Integrated Circuits
+
+| Ref | Qty | Value | Package |
+|-----|-----|-------|---------|
+| U1 | 1 | 8085 | DIP-40 |
+| U2 | 1 | 74LS573 | DIP-20 |
+| U3 | 1 | 28C256 EEPROM | DIP-28 |
+| U4 | 1 | HM62256BLP SRAM | DIP-28 |
+| U5 | 1 | 74LS14 | DIP-14 |
+| U6 | 1 | 74LS32 | DIP-14 |
+| U7 | 1 | 74LS74 | DIP-14 |
+| U8 | 1 | MAX232 | DIP-16 |
+| U9 | 1 | L7805 voltage regulator | TO-220 |
+
+#### IC Sockets
+
+| Qty | Description |
+|-----|-------------|
+| 1 | 40-pin DIP socket (for U1) |
+| 1 | 20-pin DIP socket (for U2) |
+| 2 | 28-pin DIP socket (for U3, U4) |
+| 3 | 14-pin DIP socket (for U5, U6, U7) |
+| 1 | 16-pin DIP socket (for U8) |
+
+#### Capacitors
+
+| Ref | Qty | Value | Type |
+|-----|-----|-------|------|
+| C1-C7, C17 | 7 | 100nF | Ceramic |
+| C8 | 1 | 22pF | Ceramic |
+| C9 | 1 | 47uF | Electrolytic |
+| C10-C14 | 5 | 1uF | Electrolytic |
+| C15, C18 | 2 | 10uF | Electrolytic |
+| C16 | 1 | 330nF | Ceramic |
+
+#### Resistors
+
+| Ref | Qty | Value |
+|-----|-----|-------|
+| R1, R2, R6 | 3 | 1k |
+| R3, R4, R5 | 3 | 10k |
+
+#### Diodes & LEDs
+
+| Ref | Qty | Value |
+|-----|-----|-------|
+| D1 | 1 | LED 5mm Yellow |
+| D2 | 1 | LED 5mm Green |
+| D3, D5 | 2 | 1N4001 |
+| D4 | 1 | LED 5mm Red |
+
+#### Crystal
+
+| Ref | Qty | Value |
+|-----|-----|-------|
+| Y1 | 1 | 6.144 MHz (HC49-U) |
+
+#### Connectors & Switches
+
+| Ref | Qty | Description |
+|-----|-----|-------------|
+| J1 | 1 | DB9 female connector (DE9, right-angle PCB mount) |
+| J2 | 1 | DC-005 barrel jack (2.1mm center positive) |
+| J4, J5 | 2 | 1x2 pin header (2.54mm) |
+| J6 | 1 | 2x5 pin socket (2.54mm, expansion header) |
+| S1 | 1 | Tactile push button 6x6mm (reset) |
+| S2 | 1 | Toggle switch 7x7mm (power) |
+
+#### Thermal Management
+
+| Qty | Description |
+|-----|-------------|
+| 1 | Heatsink for TO-220 (for L7805 U9) |
+
+#### External / Off-Board Items
+
+| Qty | Description |
+|-----|-------------|
+| 1 | 9V DC power supply (center positive, 2.1mm barrel jack) |
+| 1 | RS-232 to USB cable (DB9 male to USB-A) |
+| 4 | Rubber feet, 3M SJ61A6 |
 
 ---
 
