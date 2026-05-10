@@ -1,6 +1,6 @@
 # 8085-explorer
 
-A Netronics Explorer/85 compatible Intel 8085 single board computer that runs the original Microsoft ROM BASIC v4.7 and the original Netronics Explorer/85 monitor ROM. Software compatible with the 1979 original, built from a minimal number of through-hole chips, and easy to assemble.
+A Netronics Explorer/85 compatible Intel 8085 single board computer that runs the original Microsoft ROM BASIC v4.7, the original Netronics Explorer/85 monitor ROM, and a custom MicroPython interpreter written entirely in 8085 assembly. Software compatible with the 1979 original, built from a minimal number of through-hole chips, and easy to assemble.
 
 ![8085 Explorer](/docs/images/8085-explorer-1.jpg)
 
@@ -15,6 +15,15 @@ A Netronics Explorer/85 compatible Intel 8085 single board computer that runs th
   - [Flashing the ROM](#flashing-the-rom)
   - [Connecting](#connecting)
   - [Starting BASIC](#starting-basic)
+- [MicroPython Interpreter](#micropython-interpreter)
+  - [About](#about)
+  - [Running MicroPython](#running-micropython)
+  - [MicroPython Features](#micropython-features)
+  - [Building from Source](#building-from-source)
+- [Examples](#examples)
+  - [Microsoft BASIC Examples](#microsoft-basic-examples)
+  - [MicroPython Examples](#micropython-examples)
+  - [Assembly Examples](#assembly-examples)
 - [Schematic](#schematic)
 - [How It Works](#how-it-works)
   - [Address Bus Demultiplexing](#address-bus-demultiplexing)
@@ -31,6 +40,8 @@ A Netronics Explorer/85 compatible Intel 8085 single board computer that runs th
 
 The 8085 Explorer is a single board computer built around the Intel 8085 microprocessor. It is software compatible with the original Netronics Explorer/85 from 1979 and runs the same monitor ROM and Microsoft BASIC that shipped with the original kit. The board uses a small number of readily available through-hole chips and communicates through an RS232 serial port. Connect it to a terminal emulator like Tera Term and you have a working retro computer that boots into a machine language monitor and can run BASIC programs interactively.
 
+In addition to the classic Microsoft BASIC environment, the board can also run a custom MicroPython interpreter written from scratch in 8085 assembly. Flash a different ROM image and the board boots into a Python-like interactive shell instead.
+
 ![8085 Explorer Top View](/docs/images/8085-explorer-2.jpg)
 
 The design was inspired by Tom Nisbet's [Simple8085](https://github.com/TomNisbet/Simple8085). I used his [TommyPROM](https://github.com/TomNisbet/TommyPROM) programmer to flash the ROM image onto the 28C256 EEPROM.
@@ -46,6 +57,7 @@ The design was inspired by Tom Nisbet's [Simple8085](https://github.com/TomNisbe
 - Bit-banged serial I/O using the 8085's SID and SOD pins
 - Original Netronics Explorer/85 monitor ROM v1.4
 - Microsoft ROM BASIC v4.7 (Copyright 1978 by Microsoft)
+- Custom MicroPython interpreter (written in 8085 assembly, runs from a separate ROM image)
 - Minimal chip count, all through-hole, easy to build on a soldering iron
 - 9V DC barrel jack power input with L7805 5V regulator
 - Power on reset with manual reset button
@@ -67,16 +79,19 @@ The design was inspired by Tom Nisbet's [Simple8085](https://github.com/TomNisbe
 
 ### Flashing the ROM
 
-The file `assets/8085-explorer-rom-image.bin` contains the combined ROM image with both the Netronics monitor and Microsoft BASIC. Flash this file onto a 28C256 EEPROM using your programmer of choice.
+The file `assets/msbasic47-rom-image.bin` contains the combined ROM image with both the Netronics monitor and Microsoft BASIC. Flash this file onto a 28C256 EEPROM using your programmer of choice.
+
+Alternatively, flash `assets/micropython85/micropython85-rom-image.bin` to run the MicroPython interpreter instead.
 
 ### Connecting
 
 1. Configure your terminal emulator for **9600 baud, 8 data bits, no parity, 1 stop bit (9600 8N1)**.
 2. Connect the serial cable between the board's DB9 port and your computer.
 3. Flip the power switch on.
-4. Press the Space key once. The monitor ROM uses this first character to auto-detect the baud rate. Nothing will appear on screen until you do this.
+4. If using the Microsoft BASIC ROM: press the Space key once. The monitor ROM uses this first character to auto-detect the baud rate. Nothing will appear on screen until you do this.
+5. If using the MicroPython ROM: the interpreter boots directly and presents a `>>>` prompt.
 
-After pressing Space, you should see the Explorer/85 monitor banner:
+After pressing Space (with the BASIC ROM), you should see the Explorer/85 monitor banner:
 
 ```
 EXPLORER-85    VER 1.4
@@ -110,6 +125,82 @@ You are now in BASIC and can write and run programs interactively.
 Note: In my experience there is no whitespace between a monitor command and its parameter. For example, `GC000` starts BASIC (jumps to address C000h), not `G C000`.
 
 ![Tera Term running BASIC on the 8085 Explorer](/docs/images/8085-explorer-terminal.png)
+
+---
+
+## MicroPython Interpreter
+
+### About
+
+The MicroPython interpreter is a minimal Python-like environment written entirely in 8085 assembly. It is not a port of the official MicroPython project. It is a from-scratch implementation that provides a familiar interactive experience on an 8-bit processor with no operating system.
+
+The interpreter lives in a separate ROM image. You swap between Microsoft BASIC and MicroPython by flashing a different binary onto the 28C256.
+
+### Running MicroPython
+
+Flash `assets/micropython85/micropython85-rom-image.bin` onto your 28C256, insert the chip, and power on. The board boots directly into the REPL:
+
+```
+8085-Explorer Booting...
+Memory Swap Successful: ROM@8000, RAM@0000
+Booting MicroPython v1.20.0-8085 on 2026-05-10; 8085-Explorer with i8085
+Type "help()" for more information.
+
+>>> print("Hello world!")
+Hello world!
+>>>
+```
+
+![MicroPython running on the 8085 Explorer](/docs/images/8085-explorer-micropython-screenshot.png)
+
+### MicroPython Features
+
+- Interactive REPL with `>>>` prompt and `...` continuation for blocks
+- 26 variables (a through z), each a 16-bit signed integer
+- Arithmetic: `+` `-` `*` `/` `//` `**` `%`
+- Comparisons: `>` `<` `>=` `<=` `==` `!=`
+- `print()` with string literals and numeric expressions, comma-separated
+- `if/else` blocks with indentation
+- `for i in range(n)` and `for i in range(start, stop)` loops
+- `help()` built-in
+- Comments with `#`
+- Error reporting: `SyntaxError` and `ZeroDivisionError`
+
+### Building from Source
+
+The full source is at `assets/micropython85/micropython85.asm`. Assemble it with [Tom Nisbet's asm85](https://github.com/TomNisbet/asm85):
+
+```
+asm85 -b 8000:ffff micropython85.asm
+```
+
+This produces the binary ROM image ready for flashing.
+
+---
+
+## Examples
+
+The `examples/` directory contains programs for the three levels of the system.
+
+### Microsoft BASIC Examples
+
+Located in `examples/basic/`. These programs are typed in (or pasted) at the `Ok` prompt when the board is running the Microsoft ROM BASIC image.
+
+### MicroPython Examples
+
+Located in `examples/micropython/`. These scripts are typed in (or pasted) at the `>>>` prompt when the board is running the MicroPython interpreter ROM image.
+
+### Assembly Examples
+
+Located in `examples/assembly/`. These are standalone 8085 assembly programs that get assembled with [asm85](https://github.com/TomNisbet/asm85) and flashed directly onto the 28C256. Unlike the BASIC and MicroPython examples (which run inside their respective interpreters), assembly programs replace the entire ROM content and run on bare hardware.
+
+To build and flash:
+
+```
+asm85 -b 8000:ffff yourprogram.asm
+```
+
+Then program the resulting binary onto a 28C256 EEPROM.
 
 ---
 
@@ -176,6 +267,8 @@ Serial communication is handled through the 8085's built-in SID (Serial Input Da
 
 The monitor does not use a fixed baud rate. Instead, after reset it waits for you to press the Space key and measures the timing of that character to auto-detect the baud rate. This means the board works at whatever speed your terminal is configured for. I use 9600 bps.
 
+The MicroPython interpreter ROM uses its own bit-banged serial routines hardcoded to 9600 baud (tuned for the 6.144 MHz crystal). It does not require a Space keypress at startup.
+
 ---
 
 ## Documentation
@@ -191,7 +284,7 @@ The `docs/netronics-explorer-85/` directory contains scanned original documentat
 
 ## Acknowledgments
 
-- Tom Nisbet for [Simple8085](https://github.com/TomNisbet/Simple8085), which was the main inspiration for this project, and for [TommyPROM](https://github.com/TomNisbet/TommyPROM), which I used to program the EEPROM
+- Tom Nisbet for [Simple8085](https://github.com/TomNisbet/Simple8085), which was the main inspiration for this project, for [TommyPROM](https://github.com/TomNisbet/TommyPROM), which I used to program the EEPROM, and for [asm85](https://github.com/TomNisbet/asm85), the assembler used to build the MicroPython interpreter
 - Netronics R&D for the original Explorer/85 design and monitor ROM
 - Microsoft for ROM BASIC v4.7
 
